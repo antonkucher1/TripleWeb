@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>TripleWeb</title>
+</head>
+<body>
+    <section id="sidebar" class="sidebar hide">
+        <div class="logo">
+            TripleWeb
+        </div>
+        <ul class='menu'>
+            <a href="#"><li>Things</li></a>
+            <a href="#"><li>Mashups</li></a>
+            <a href="#"><li>Services</li></a>
+            <a href="#"><li>Help</li></a>
+        </ul>
+    </section>
+    <section class="content">
+        <header>
+            <img id="arrow" class="arrow" src="img/arrow.svg" alt="">
+            <p>Read pins</p>
+        </header>
+    </section>
+
+
+    <script>
+        var arrow = document.getElementById("arrow"); //запоминаем стрелочку
+        var sidebar = document.getElementById("sidebar"); // запоминаем сайдбар
+        document.addEventListener("click", function(e) { //слушаем клики
+            if (e.target == arrow) { //если кликают на стрелочку изменяем класс сайдбара и стрелочки
+                if(sidebar.classList.contains('hide')){
+                    sidebar.classList.add('show');
+                    sidebar.classList.remove('hide');
+                }
+                else{
+                    sidebar.classList.add('hide');
+                    sidebar.classList.remove('show');
+                    sidebar.classList.remove('show');
+                }
+                if(!arrow.classList.contains('arrow-show')){
+                    arrow.classList.add('arrow-show');
+                    
+                }
+                else{
+                    arrow.classList.remove('arrow-show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
